@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= title %></title>
+    </head>
+    <body>
+        <h1><%= title %></h1>
+        <% for(var i = 0; i < individuals.length; i++){ %>
+            <div>
+                Username: <%= individuals[i].username %>
+            </div>
+        <%}%>
+        <p>Return to <a href="/">home page</a></p>
+    </body>
+</html>
+

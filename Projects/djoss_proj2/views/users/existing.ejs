@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fritter</title>
+    <link rel="stylesheet" type="text/css" href="/css/existing_users.css">
+  </head>
+    
+  <body>
+    <header>
+      <h1>Fritter</h1>
+    <header>
+    
+    <aside>
+      <p>Logged in as <b><%= username %></b></p>
+      <form name="logout" action="logout" method="post">
+        <input type="submit" value="Logout">
+      </form>
+      <p>Tweet</p>
+      <form name="tweet" action="addtweet" method="post">
+        <input type="text" name="tweet_content" class="tweet_box">
+        <input type="submit" value="Tweet">
+      </form>
+    </aside>
+
+    <section>
+      <% for(var i = 0; i < tweets.length; i++){ %>
+      <div>
+      <% if (tweets[i].username === username) { %>
+      <b>@<%= tweets[i].username %>:</b> 
+       <%= tweets[i].tweet %> 
+        <form action="edittweet" method="post"> 
+          <input type="submit" value="Edit">
+          <input type="text" name="edit">
+          <input type="hidden" name="tweetID" value=<%= tweets[i]._id %> >
+        </form>
+        <form action="deletetweet" method="post"> 
+          <input type="submit" value="Delete"> 
+          <input type="hidden" name="tweetID" value=<%= tweets[i]._id %> >
+        </form>
+      <%}else { %>
+        <b>@<%= tweets[i].username %>:</b> 
+        <%= tweets[i].tweet %>
+      <%}%>
+      <%}%>
+      </div>
+    </section>
+  </body>
+</html>

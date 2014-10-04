@@ -1,0 +1,21 @@
+table {
+    border-collapse: collapse;
+}
+
+td {
+    height: 5px;
+    width: 5px;
+    cursor: pointer;
+}
+
+.live {
+    background: white;
+}
+
+.dead {
+    background: black;
+}
+
+button {
+    width: 115px;
+}
