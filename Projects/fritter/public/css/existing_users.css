@@ -1,0 +1,21 @@
+header {
+    text-align:left;
+}
+
+aside {
+    line-height:30px;
+    float:left;
+    height:300px;
+    width:100px;
+}
+
+section {
+    margin-left:auto;
+    margin-right:auto;
+    width:350px;
+}
+
+.tweet_box {
+    width:100px;
+    height:50px;
+}

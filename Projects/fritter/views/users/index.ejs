@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fritter</title>
+    <link rel="stylesheet" type="text/css" href="/css/existing_users.css">
+  </head>
+    
+  <body>
+    <header>
+      <h1>Fritter</h1>
+    <header>
+    
+    <aside>
+      <p>Logged in as: <b>@<%= username %></b></p>
+      <form name="logout" action="logout" method="post">
+        <input type="submit" value="Logout">
+      </form>
+      <p>Tweet</p>
+      <form name="tweet" action="addtweet" method="post">
+        <textarea type="text" name="tweet_content" class="tweet_box"></textarea>
+        <input type="submit" value="Tweet">
+      </form>
+      <p>Other Users</p>
+      <% for(var i = 0; i < individuals.length; i++){ %>
+      <% if (individuals[i].username !== username) { %>  
+        <div>
+          @<%= individuals[i].username %>
+          <form action="follow" method="post">
+            <input type="submit" value="Follow User">
+            <input type="hidden" name="userID" value=<%= individuals[i]._id %> >
+          </form>
+        </div>
+      <%}%>
+      <%}%>
+    </aside>
+
+    <section>
+      <% for(var i = 0; i < tweets.length; i++){ %>
+      <div>
+      <% if (tweets[i].author.username === username) { %>
+      <b>@<%= tweets[i].author.username %>:</b> 
+       <%= tweets[i].content %> 
+        <form action="edittweet" method="post"> 
+          <input type="submit" value="Edit">
+          <input type="text" name="edit">
+          <input type="hidden" name="tweetID" value=<%= tweets[i]._id %> >
+        </form>
+        <form action="deletetweet" method="post"> 
+          <input type="submit" value="Delete"> 
+          <input type="hidden" name="tweetID" value=<%= tweets[i]._id %> >
+        </form>
+      <%}else if (following.indexOf(tweets[i].author._id) !== -1){ %>
+        <b>@<%= tweets[i].author.username%>:</b> 
+        <%= tweets[i].content %>
+        <form action="retweet" method="post">
+          <input type="submit" value="Retweet">
+          <input type="hidden" name="tweetID" value=<%= tweets[i]._id %> >
+        </form>
+      <%}%>
+      <%}%>
+      </div>
+    </section>
+  </body>
+</html>
