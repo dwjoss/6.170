@@ -1,0 +1,9 @@
+{{!-- Author: Dylan --}}
+
+{{!-- assumes we have access to a YouTube JSON object: queue-song--}}
+
+<ul id="queue-songs" class="list-group">
+  {{#each queue-songs}}
+    {{> queue-song}}
+  {{/each}}
+</ul>

@@ -1,0 +1,78 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400);
+
+* {
+	font-family: 'Lato', sans-serif;
+}
+
+body {
+	background-color: #eee;
+}
+
+h1 {
+	margin: 0px;
+}
+
+h4, h5, p {
+	font-weight: 100;
+}
+
+#login-div {
+	background-color: white;
+	padding: 20px;
+	margin: 20px;
+	border-radius: 6px;
+}
+
+#main {
+	background-color: white;
+	padding: 30px;
+	margin: 0 auto;
+}
+
+.right {
+	float: right;
+}
+
+.fill { 
+    min-height: 100%;
+    height: 100%;
+}
+
+.date {
+	display: block; 
+	color: #aaa; 
+	text-weight:100; 
+	font-size: 10px;
+}
+
+#link-text {
+	cursor: text;
+}
+
+#search-results {
+	height: 300px;
+	overflow: scroll;
+}
+
+#queue-container {
+	margin-top: -5px;
+}
+
+#queue {
+	margin-top: 5px;
+	overflow: scroll;
+	height: 150px; 
+	padding-top: 30px;
+}
+
+#waiting h3 {
+	text-align: center;
+	color: #ccc;
+	margin-top: 100px;
+}
+
+#footer {
+	color: #ddd;
+	font-weight:100;
+	text-align:center;
+}

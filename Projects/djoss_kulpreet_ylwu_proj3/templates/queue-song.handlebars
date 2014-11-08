@@ -1,0 +1,15 @@
+{{!-- Author: Dylan --}}
+
+{{!-- assumes we have access to a YouTube JSON object: queue-song--}}
+
+<li class="list-group-item" style="padding: 10px" data-id={{_id}}>
+<div class="media">
+  <span class="pull-left">
+    <img class="media-object" src={{thumbnails.0.url}} height="50" width="67" alt="thumbnail" />
+  </span>
+  <div class="media-body">
+    <h4 class="media-heading">{{title}}</h4>   
+    <span class="date">{{getMetadataString statistics.viewCount duration}}</span>
+  </div>
+</div>
+</li>
